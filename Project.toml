@@ -2,3 +2,6 @@ name = "MiscFunctions"
 uuid = "563a5c2f-74b7-4850-b29e-f182588f3084"
 authors = ["Vojtech Kumpost"]
 version = "0.1.0"
+
+[deps]
+Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"

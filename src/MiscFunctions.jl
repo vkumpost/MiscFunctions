@@ -1,5 +1,9 @@
 module MiscFunctions
 
-greet() = print("Hello World!")
+using Statistics
 
-end # module
+export cmean, cstd
+
+include("circular_statistics.jl")
+
+end  # module
