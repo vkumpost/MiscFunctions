@@ -22,7 +22,6 @@ end
 
 Compute circular standard deviation of an array.
 
-
 **Arguments**
 - `x`: Array of angles in radians.
 
