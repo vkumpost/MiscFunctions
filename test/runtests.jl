@@ -18,4 +18,22 @@ using MiscFunctions
     index = find_closest(value, array)
     @test index == 6
 
+    # Test binary boundary search
+    X_target = -13
+    fun = x -> x > X_target
+    err = 0.1
+    x_range = [-17, 84]
+    X = binary_boundary_search(fun, x_range, err)
+    @test abs(X_target - X) < err
+    
+    # Target is outside of the range to the left
+    fun = x -> x > -100
+    X = binary_boundary_search(fun, x_range, err)
+    @test X == x_range[1]
+
+    # Target is outside of the range to the right
+    fun = x -> x > 100
+    X = binary_boundary_search(fun, x_range, err)
+    @test X == x_range[2]
+
 end
