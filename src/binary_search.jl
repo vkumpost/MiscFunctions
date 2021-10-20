@@ -16,15 +16,15 @@ function binary_boundary_search(fun, x_range, err)
 
     x1 = x_range[1]
     x2 = x_range[2]
-    y1 = fun(x1)
-    y2 = fun(x2)
 
-    if y1 == y2
-        if y1 == 0
-            return x2
-        else
-            return x1
-        end
+    y1 = fun(x1)
+    if y1 == 1
+        return x1
+    end
+
+    y2 = fun(x2)
+    if y2 == 0
+        return x2
     end
 
     while abs(x1 - x2) > 2err
