@@ -36,4 +36,21 @@ using MiscFunctions
     X = binary_boundary_search(fun, x_range, err)
     @test X == x_range[2]
 
+    # r2_score
+    x = [1, 2, 3]
+    y = [3, 5, 1]
+    R2 = r2_score(x, y)
+    @test R2 ≈ -7.5
+
+    x = [0, 4, 5]
+    y = [1, 2, 3]
+    R2 = r2_score(x, y)
+    @test R2 ≈ 1-9/14
+
+    x = [0, 1, -8]
+    y = [0, 1, -8]
+    R2 = r2_score(x, y)
+    @test R2 ≈ 1
+
+
 end
