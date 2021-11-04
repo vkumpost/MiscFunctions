@@ -17,7 +17,7 @@ using Statistics
 export binary_boundary_search
 export cmean, cstd
 export find_closest
-export r2_score
+export r2_score, ptp
 
 include("binary_search.jl")
 include("circular_statistics.jl")

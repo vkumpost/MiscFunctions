@@ -52,5 +52,9 @@ using MiscFunctions
     R2 = r2_score(x, y)
     @test R2 ≈ 1
 
+    # ptp
+    x = [1 5 -1 7; 4 0 -5 0]
+    @test ptp(x) ≈ 12
+    @test ptp(x; dims=2) ≈ [8; 9]
 
 end

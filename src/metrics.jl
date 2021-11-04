@@ -18,3 +18,22 @@ function r2_score(x, y)
     R2 = 1 - SSres/SStot
     return R2
 end
+
+
+"""
+`ptp(x; kwargs...)`
+
+Return the peak-to-peak range (maximum - minimum).
+
+**Arguments**
+- `x`: Array of values.
+
+**Keyword Arguments**
+- Passed to `maximum`/`minimum` functions. See their documentation.
+
+**Returns**
+- Peak-to-peak range.
+"""
+function ptp(x; kwargs...)
+    return maximum(x; kwargs...) - minimum(x; kwargs...)
+end
