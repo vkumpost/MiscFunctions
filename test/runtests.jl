@@ -57,4 +57,15 @@ using MiscFunctions
     @test ptp(x) ≈ 12
     @test ptp(x; dims=2) ≈ [8; 9]
 
+    # smooth
+    y = [-2, -5, 1, -1, 3, 0, 6]
+    yy = smooth(y)
+    @test all(yy .≈ [-2, -2, -0.8, -0.4, 1.8, 3, 6])
+
+    yy = smooth(y, 1)
+    @test all(yy .≈ [-2, -5, 1, -1, 3, 0, 6])
+
+    yy = smooth(y, 100)
+    @test all(yy .≈ [-2, -2, -0.8, 0.2857142857142857, 1.8, 3, 6])
+
 end
