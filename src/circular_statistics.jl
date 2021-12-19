@@ -32,6 +32,11 @@ function cstd(x)
     S = mean(sin.(x))
     C = mean(cos.(x))
     R = sqrt(S^2 + C^2)
-    sd = sqrt(-2*log(R))
+    x = -2*log(R)
+    if x < 0
+        @warn "Negative value $x set to 0!"
+        x = 0
+    end
+    sd = sqrt(x)
     return sd
 end
